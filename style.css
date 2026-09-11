@@ -1,0 +1,155 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-alt: #1f232c;
+  --text: #f2f3f5;
+  --text-dim: #9aa0ab;
+  --accent: #5b8cff;
+  --accent-active: #4270e6;
+  --success: #3ddc97;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 4px 0 24px;
+  color: var(--text-dim);
+}
+
+.duration-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.duration-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--surface-alt);
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.duration-btn:hover {
+  border-color: var(--accent);
+}
+
+.duration-btn[data-active="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 8px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.click-area {
+  width: 100%;
+  aspect-ratio: 1.4 / 1;
+  max-height: 320px;
+  border: none;
+  border-radius: var(--radius);
+  background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-active));
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+  transition: transform 0.06s ease-out;
+}
+
+.click-area:active {
+  transform: scale(0.97);
+}
+
+.click-area[data-done="true"] {
+  background: radial-gradient(circle at 30% 30%, var(--success), #24a374);
+  cursor: default;
+}
+
+.best {
+  margin-top: 16px;
+  color: var(--text-dim);
+}
+
+.best span {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.reset-btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: none;
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: var(--accent);
+}
