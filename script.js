@@ -109,6 +109,10 @@ clickArea.addEventListener("pointerdown", (event) => {
   handleClick();
 });
 
+clickArea.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
+
 resetBtn.addEventListener("click", resetState);
 
 resetState();
